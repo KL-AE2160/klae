@@ -1,6 +1,6 @@
 const db = require("quick.db")
 const { addexp } = require("../handlers/xp.js");
-const { ownerID, default_prefix } = require("../config.json");
+const { owner, default_prefix, premium } = require("../config.json");
 const { badwords } = require("../data.json") 
 let cooldown = {}
 
@@ -49,7 +49,11 @@ if(!message.member.hasPermission("ADMINISTRATOR")) {
 
   /* O W N E R */
   if (command.ownerOnly) {
-    if (message.author.id !== ownerID) return message.channel.send("This command can only be use by owner :C")
+    if (!owner.includes(message.author.id)) return message.channel.send("This command can only be use by owner :C")
+  }
+
+  if (command.premium) {
+    if (!premium.includes(message.guild.id)) return message.channel.send("This command can only be use by premium servers :C")
   }
 
   /* C O O L - D O W N */
