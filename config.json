@@ -1,5 +1,6 @@
 {
-  "token": "TOKEN",
-  "default_prefix": "PREFIX",
-  "ownerID": "Owner ID"
+  "token": "",
+  "default_prefix": "",
+  "owner": ["", ""], 
+  "premium": ["", ""]
 }
