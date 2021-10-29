@@ -13,6 +13,7 @@ module.exports = {
     description: "Get the level of author or mentioned",
     usage: "level <user>",
     category: "info",
+    aliases: ["rank"], 
     run: async (client, message, args) => {
         const user = message.mentions.users.first() || message.author;
 
